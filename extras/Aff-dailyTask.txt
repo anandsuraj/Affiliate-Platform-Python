@@ -6,3 +6,40 @@ URLS->APPs(API/product/1)->Product->urls->View(Check Login)
 Learn Database schema using view and model methods(Inspect)
 Check Login in controller 
 Learn JWT Login, Check Session, Return UserId
+
+Certainly! Here's how these files work together to serve an API request from start to finish:
+
+1. **URLs Configuration (`product/urls.py`):**
+   - When an API request is made, Django's URL configuration is the entry point.
+   - The URL patterns in `product/urls.py` define the routes for different API endpoints. For example, `/create/` and `/list/` are two endpoints defined here.
+   - When a request is made to one of these endpoints, it's mapped to a corresponding view function.
+
+2. **Views (`management/views.py`):**
+   - The view functions in `management/views.py` handle the request.
+   - For instance, `AffiliateProductList` is a view that inherits from `generics.ListCreateAPIView`. It provides built-in methods for listing and creating items in the `AffiliateProduct` model.
+   - This view interacts with the model to retrieve or create data.
+
+3. **Serializers (`management/serializers.py`):**
+   - Serializers in `management/serializers.py` define how data should be converted to and from JSON format (or other formats like XML).
+   - They're used in views for validating and parsing data.
+   - For example, the `AffiliateProductSerializer` would specify how `AffiliateProduct` model instances should be serialized into JSON for API responses.
+
+4. **Model (`management/models.py`):**
+   - The model, defined in `management/models.py`, represents the structure of your database tables.
+   - In this case, it defines the `AffiliateProduct` model, which has attributes corresponding to the fields in your database table.
+
+5. **Request Handling Flow:**
+   - When a request is made to an API endpoint (e.g., `/create/` or `/list/`), the corresponding view function is invoked.
+   - In the view function, data is fetched, processed, and returned using the serializers.
+   - If the request is a "list" request (e.g., a GET request to retrieve data), the view retrieves data from the database (using the model), serializes it, and sends it as an API response.
+   - If the request is a "create" request (e.g., a POST request to add new data), the view parses the incoming data using the serializer, creates a new model instance, and saves it to the database.
+
+6. **Database (`manage.py` and Database System):**
+   - Django handles interactions with the database via the models.
+   - The database system stores the data, which is used for both retrieving data in "list" requests and storing new data in "create" requests.
+
+7. **Custom Logic (`management/utils.py`):**
+   - You can implement custom logic in `management/utils.py` for tasks like fetching and updating products from affiliate partners' APIs.
+   - The custom logic can be called from the view functions to perform these tasks.
+
+The flow can vary based on the specific view, model, and serializer logic, but this overview should give you a clear understanding of how API requests are processed in a Django project.

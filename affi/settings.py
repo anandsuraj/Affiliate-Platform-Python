@@ -126,3 +126,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Amazon API Credentials
+AMAZON_ACCESS_KEY = 'your_access_key_here'
+AMAZON_SECRET_KEY = 'your_secret_key_here'
+AMAZON_ASSOCIATE_TAG = 'your_associate_tag_here'
