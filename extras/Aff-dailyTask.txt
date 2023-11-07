@@ -1,0 +1,8 @@
+
+
+
+
+URLS->APPs(API/product/1)->Product->urls->View(Check Login)
+Learn Database schema using view and model methods(Inspect)
+Check Login in controller 
+Learn JWT Login, Check Session, Return UserId
