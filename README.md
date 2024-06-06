@@ -24,7 +24,7 @@ This repository contains a Django project for the Affiliate Platform, aimed at e
 
 1. **Clone the Repository:** 
    ```
-   git clone https://github.com/your_username/affiliate-platform.git
+   git clone https://github.com/anandsuraj/Affiliate-Platform-Python.git
    ```
 
 2. **Install Dependencies:** 
